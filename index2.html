@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#mario {
+			background: url(pict/mario.jpg) no-repeat;
+			width: 100%;
+			height: 500px;
+			position: relative; /*position Устанавливает способ позиционирования элемента относительно окна браузера или других объектов на веб-странице.  relativeПоложение элемента устанавливается относительно его исходного места. Добавление свойств left, top, right и bottom изменяет позицию элемента и сдвигает его в ту или иную сторону от первоначального расположения.*/
+			overflow: hidden;/*Свойство overflow управляет отображением содержания блочного элемента, если оно целиком не помещается и выходит за область заданных размеров. hidden
+Отображается только область внутри элемента, остальное будет скрыто.*/
+		}
+		
+		#super {
+			background: url(pict/super.png);
+			background-size: 100%;
+			width: 72px;
+			height: 120px;
+			position: absolute;
+			bottom: 50px;
+			left: 0;
+			background-repeat: no-repeat;
+			-webkit-animation: move-super 7s linear;
+				
+		}
+		
+		.bullet {
+			background: yellow;
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			border-radius: 100%;
+			opacity: 0%;
+			left: 43%;
+			top: 40px;
+			-webkit-animation: bullet1 1s linear;
+		}
+		
+		.bot {
+			background: #6b88ff;
+/*			background: yellow;*/
+			width: 50px;
+			height: 50px;
+			position: fixed;
+			left: 358px;
+			top: 396px;
+			-webkit-animation: bot1;
+			animation-direction: initial;
+			animation-delay: 0.01s;
+			animation-duration: 5s;
+		}
+		
+		@-webkit-keyframes bot1 {
+			20% {opacity: 0;} 
+    		21% {opacity: 1;}
+			100% {opacity: 1;}
+
+
+		}
+		
+		@-webkit-keyframes bullet1 {
+			0% {opacity: 0;}
+			10% {opacity: 1; left: 43px;}
+			100% {left: 265px;}
+		}
+		
+		@-webkit-keyframes move-super {
+			
+			0% {top: 380px; left: 1px;}
+			5% {top: 380px; left: 36px;}
+			10% {top: 380px; left: 72px;}
+			15% {top: 380px; left: 108px;}
+			20% {top: 380px; left: 144px;}
+			25% {top: 380px; left: 180px;}
+			29% {top: 237px; left: 195px;}
+			30% {top: 237px; left: 216px;} 
+			35% {top: 237px; left: 252px;}
+			40% {top: 380px; left: 288px;}
+			48% {top: 237px; left: 324px;}
+			50% {top: 237px; left: 360px;}
+			55% {top: 237px; left: 396px;}
+			60% {top: 237px; left: 432px;}
+			65% {top: 237px; left: 468px;}
+			70% {top: 237px; left: 504px;}
+			75% {top: 237px; left: 540px;}
+			80% {top: 380px; left: 576px;}
+			85% {top: 380px; left: 600px;}
+			90% {top: 237px; left: 695px;}
+			95% {top: 237px; left: 720px;}
+			100% {top: 380px; left: 760px;}
+				
+		}
+
+		
+	</style>
+</head>
+<body>
+	<div id="mario">
+		<div id="super">
+		<div class="bullet"></div>
+		<div class="bot"></div>
+			
+		</div>
+		
+	</div>
+	
+	<audio autoplay>
+    	<source src="mp3/super-mario-tema.mp3" type="audio/mpeg"> 
+   		<a href="mp3/super-mario-tema.mp">Скачайте музыку</a>.
+  	</audio>
+</body>
+</html>
